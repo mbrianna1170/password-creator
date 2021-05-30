@@ -1,5 +1,4 @@
-// Assignment code here
-
+// create new variables for password
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
