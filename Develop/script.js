@@ -7,7 +7,9 @@ var numberCharacters = "1, 2, 3, 4, 5, 6, 7, 8, 9";
 var specialCharacters = "!, @, #, $, %, &, *, ?";
 // console.log(specialCharacters);
 
+
 function generatePassword() {
+  //creates criteria for length of password
   passwordLength = prompt('Please enter the amount of characters you would like in your password. Choose between 8-128 characters.');
   if (passwordLength < 8 || passwordLength > 128) {
     return alert("Please choose a number between 8-128.")
@@ -16,6 +18,30 @@ function generatePassword() {
   }  
   else {
     confirm('Your password will be' + ' ' + passwordLength + ' ' + 'characters long.');
+  }
+  //creates confirmation for lower case characters
+  lowerCaseLetters = confirm("Select 'OK' to have lower case letters.");
+  if (lowerCaseLetters) {
+    alert("This password will include lowercase characters.")
+  }
+  else {
+    alert('This password will NOT include lowercase characters.')
+  }
+  // creates confirmation for upper case characters
+  upperCaseLetters = confirm("Select 'OK' to have uppercase letters.");
+  if (upperCaseLetters) {
+    alert("This password will include uppercase characters.")
+  }
+  else {
+    alert('This password will NOT include uppercase characters.')
+  }
+  // creates confirmation for special characters
+  specialLetters = confirm("Select 'OK' to have special characters such as '$!@%&'.");
+  if (specialLetters) {
+    alert("This password will include special characters.")
+  }
+  else {
+    alert('This password will NOT include special characters.')
   }
 };
 
