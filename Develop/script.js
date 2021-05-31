@@ -6,6 +6,8 @@ var numberCharacters = "1, 2, 3, 4, 5, 6, 7, 8, 9";
 // console.log(numberCharacters);
 var specialCharacters = "!, @, #, $, %, &, *, ?";
 // console.log(specialCharacters);
+var potentialPassword = [];
+
 
 
 function generatePassword() {
@@ -43,12 +45,31 @@ function generatePassword() {
   else {
     alert('This password will NOT include special characters.')
   }
-};
+// based on confirmation for lower, upper, and/or special characters
 
 
+if (lowerCaseLetters) {
+  potentialPassword = potentialPassword.concat(lowerCaseCharacters);
+}
+if (hasUppercase) {
+  potentialPassword = potentialPassword.concat(upperCaseCharacters);
+}
+if (specialLetters) {
+  potentialPassword = potentialPassword.concat(specialCharacters);
+}
 
-// Get references to the #generate element
+// pick random cards out of new pool for length of password
+var potentialPassword = ''
+for (var i = 0; i < numberOfCharacters; i++) {
+  var rng =[Math.floor(Math.random() * potentialPassword.length)];
+  
+  password = password + potentialPassword[rng];
+}
+
+}
+
 var generateBtn = document.querySelector("#generate");
+
 
 // Write password to the #password input
 function writePassword() {
@@ -60,4 +81,5 @@ function writePassword() {
 }
 
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
